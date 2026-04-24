@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "ballistix:block/dartpod" },
+    "facing=south": { "model": "ballistix:block/dartpod", "y": 180 },
+    "facing=east": { "model": "ballistix:block/dartpod", "y": 90 },
+    "facing=west": { "model": "ballistix:block/dartpod", "y": 270 }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "ballistix:incendiary"
+    },
+    "S": {
+      "item": "ballistix:shrapnel"
+    }
+  },
+  "pattern": [
+    " S ",
+    "SIS",
+    " S "
+  ],
+  "result": {
+    "item": "ballistix:fragmentation"
+  },
+  "show_notification": false
+}

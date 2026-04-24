@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "O": {
+      "tag": "forge:obsidian"
+    },
+    "R": {
+      "tag": "forge:dusts/redstone"
+    },
+    "T": {
+      "item": "minecraft:tnt"
+    }
+  },
+  "pattern": [
+    "OOO",
+    "TRT",
+    "OOO"
+  ],
+  "result": {
+    "item": "ballistix:obsidian"
+  },
+  "show_notification": false
+}

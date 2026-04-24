@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "top": "ballistix:block/horizontal_silo",
+    "front": "ballistix:block/horizontal_silo",
+    "side": "ballistix:block/horizontal_silo"
+  }
+}

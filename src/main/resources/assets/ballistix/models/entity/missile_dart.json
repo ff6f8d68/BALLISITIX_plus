@@ -1,0 +1,9 @@
+{
+  "loader": "forge:obj",
+  "flip_v": true,
+  "model": "ballistix:models/entity/missiles/dartmissile.obj",
+  "mtl_override": "ballistix:models/entity/missiles/dartmissile.mtl",
+  "textures": {
+    "texture0": "ballistix:block/model/missile_dart"
+  }
+}

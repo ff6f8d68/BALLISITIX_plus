@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "facing=north,waterlogged=false": { "model": "ballistix:block/horizontalsilo", "y": 180 },
+    "facing=south,waterlogged=false": { "model": "ballistix:block/horizontalsilo", "y": 0 },
+    "facing=east,waterlogged=false": { "model": "ballistix:block/horizontalsilo", "y": 270 },
+    "facing=west,waterlogged=false": { "model": "ballistix:block/horizontalsilo", "y": 90 },
+    "facing=north,waterlogged=true": { "model": "ballistix:block/horizontalsilo", "y": 180 },
+    "facing=south,waterlogged=true": { "model": "ballistix:block/horizontalsilo", "y": 0 },
+    "facing=east,waterlogged=true": { "model": "ballistix:block/horizontalsilo", "y": 270 },
+    "facing=west,waterlogged=true": { "model": "ballistix:block/horizontalsilo", "y": 90 }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "loader": "forge:obj",
+  "model": "ballistix:models/block/obj/bigdartpod.obj",
+  "mtl_override": "ballistix:models/block/obj/bigdartpod.mtl",
+  "ambientocclusion": true,
+  "textures": {
+    "texture0": "ballistix:block/horizontal_silo"
+  }
+}

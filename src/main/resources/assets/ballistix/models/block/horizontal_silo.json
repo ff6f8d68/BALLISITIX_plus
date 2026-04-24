@@ -1,0 +1,9 @@
+{
+  "loader": "forge:obj",
+  "flip_v": true,
+  "model": "ballistix:models/block/obj/horizontal_silo.obj",
+  "mtl_override": "ballistix:models/block/obj/horizontal_silo.mtl",
+  "textures": {
+    "texture0": "ballistix:block/model/missilesilo"
+  }
+}

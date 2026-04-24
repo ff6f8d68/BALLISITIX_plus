@@ -1,0 +1,57 @@
+package ballistix.common.event;
+
+import ballistix.References;
+import ballistix.api.capability.BallistixCapabilities;
+import ballistix.api.capability.CapabilityActiveBullets;
+import ballistix.api.capability.CapabilityActiveMissiles;
+import ballistix.api.capability.CapabilityActiveRailgunRounds;
+import ballistix.api.capability.CapabilityActiveSAMs;
+import ballistix.api.capability.CapabilitySiloRegistry;
+import ballistix.common.command.CommandClearBullets;
+import ballistix.common.command.CommandClearMissiles;
+import ballistix.common.command.CommandClearRailgunRounds;
+import ballistix.common.command.CommandClearSAMs;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.Level;
+import net.neoforged.neoforge.event.AttachCapabilitiesEvent;
+import net.neoforged.neoforge.event.RegisterCommandsEvent;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.Mod.EventBusSubscriber;
+import net.neoforged.fml.common.Mod.EventBusSubscriber.Bus;
+
+@EventBusSubscriber(modid = References.ID, bus = Bus.FORGE)
+public class ServerEventHandler {
+
+	@SubscribeEvent
+	public static void attachOverworldCapability(AttachCapabilitiesEvent<Level> event) {
+		Level world = event.getObject();
+		if (!world.getCapability(BallistixCapabilities.SILO_REGISTRY).isPresent() && world.dimension().equals(Level.OVERWORLD)) {
+			event.addCapability(new ResourceLocation(References.ID, "siloregistry"), new CapabilitySiloRegistry());
+		}
+		
+		if (!world.getCapability(BallistixCapabilities.ACTIVE_MISSILES).isPresent() && world.dimension().equals(Level.OVERWORLD)) {
+			event.addCapability(new ResourceLocation(References.ID, "activemissiles"), new CapabilityActiveMissiles());
+		}
+		
+		if (!world.getCapability(BallistixCapabilities.ACTIVE_BULLETS).isPresent() && world.dimension().equals(Level.OVERWORLD)) {
+			event.addCapability(new ResourceLocation(References.ID, "activebullets"), new CapabilityActiveBullets());
+		}
+		
+		if (!world.getCapability(BallistixCapabilities.ACTIVE_RAILGUN_ROUNDS).isPresent() && world.dimension().equals(Level.OVERWORLD)) {
+			event.addCapability(new ResourceLocation(References.ID, "activerailgunrounds"), new CapabilityActiveRailgunRounds());
+		}
+		
+		if (!world.getCapability(BallistixCapabilities.ACTIVE_SAMS).isPresent() && world.dimension().equals(Level.OVERWORLD)) {
+			event.addCapability(new ResourceLocation(References.ID, "activesams"), new CapabilityActiveSAMs());
+		}
+	}
+	
+	@SubscribeEvent
+	public static void registerCommands(RegisterCommandsEvent event) {
+		CommandClearMissiles.register(event.getDispatcher());
+		CommandClearBullets.register(event.getDispatcher());
+		CommandClearRailgunRounds.register(event.getDispatcher());
+		CommandClearSAMs.register(event.getDispatcher());
+	}
+
+}

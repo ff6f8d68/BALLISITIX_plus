@@ -1,0 +1,9 @@
+{
+  "loader": "forge:obj",
+  "flip_v": true,
+  "model": "ballistix:models/entity/missiles/missile_micro.obj",
+  "mtl_override": "ballistix:models/entity/missiles/missile_micro.mtl",
+  "textures": {
+    "texture0": "ballistix:block/model/missile_test"
+  }
+}

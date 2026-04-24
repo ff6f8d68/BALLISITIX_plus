@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "R": {
+      "tag": "forge:dusts/redstone"
+    },
+    "T": {
+      "item": "minecraft:tnt"
+    }
+  },
+  "pattern": [
+    "TRT"
+  ],
+  "result": {
+    "count": 3,
+    "item": "ballistix:condensive"
+  },
+  "show_notification": false
+}

@@ -1,0 +1,174 @@
+plugins {
+    id 'eclipse'
+    id 'maven-publish'
+    // Remove the 'net.neoforged.gradle.userdev' line and replace with:
+    id 'net.neoforged.moddev' version '2.0.141'
+    id 'com.matthewprenger.cursegradle' version "${cursegradle_version}"
+}
+
+group = ballistix_group
+version = "${minecraft_version}-" + ballistix_version
+
+base {
+
+	archivesName = ballistix_name
+
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
+
+neoForge {
+    version = "${neoforge_version}"
+    
+    accessTransformers = files('src/main/resources/META-INF/accesstransformer.cfg')
+
+    runs {
+        client {
+            gameDirectory = project.file('run') // Added '='
+
+            programArguments.addAll([ // Use addAll for the list
+                                      '--username', 'Dev',
+                                      '--version', project.name
+            ])
+
+            systemProperty 'neoforge.enabledGameTestNamespaces', 'ballistix'
+
+            // In ModDevGradle, the 'mods' block inside 'runs' is usually handled
+            // automatically if you've defined the main mod below,
+            // but you can keep it if you need specific source sets.
+        }
+
+        server {
+            gameDirectory = project.file('run') // Added '='
+            programArguments.add '--nogui'
+        }
+
+        data {
+            gameDirectory = project.file('run') // Added '='
+            programArguments.addAll([
+                    '--mod', 'ballistix',
+                    '--all',
+                    '--output', file('src/generated/resources/').getAbsolutePath(),
+                    '--existing', file('src/main/resources/').getAbsolutePath()
+            ])
+        }
+    }
+
+    mods {
+        ballistix {
+            sourceSet sourceSets.main
+        }
+    }
+}
+
+sourceSets.main.resources { srcDir 'src/generated/resources' }
+
+dependencies {
+    // Just 'implementation', no 'fg.deobf'
+    implementation files("libs/ed.jar")
+    implementation files("libs/vt.jar")
+    compileOnly "mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"
+    compileOnly "mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}"
+    runtimeOnly "mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}"
+}
+
+repositories {
+    flatDir {
+        dir 'libs'
+    }
+	mavenCentral()
+	maven {
+	    name = "NeoForge"
+	    url = "https://maven.neoforged.net/releases/"
+	}
+	maven {
+	    name = "Jared's maven"
+	    url = "https://maven.blamejared.com/"
+	}
+	maven {
+    	name = "ModMaven"
+    	url = "https://modmaven.dev"
+  	}
+    maven {
+        name = "Valkyrien Skies"
+        url = "https://maven.valkyrienskies.org"
+        content {
+            includeGroupByRegex "org.valkyrien.*"
+        }
+    }
+}
+
+tasks.named('jar', Jar).configure {
+    manifest {
+        attributes([
+            "Specification-Title": "ballistix",
+            "Specification-Vendor": "aurilisdev",
+            "Specification-Version": "1",
+            "Implementation-Title": project.name,
+            "Implementation-Version": project.jar.archiveVersion,
+            "Implementation-Vendor" :"aurilisdev",
+            "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+        ])
+    }
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+}
+
+tasks.register('sourcesJar', Jar).configure {
+	dependsOn classes
+	from sourceSets.main.allSource
+	archiveClassifier = 'sources'
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+}
+
+tasks.register('deobfJar', Jar).configure {
+	from sourceSets.main.output
+	archiveClassifier = 'deobf'
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+}
+
+tasks.named('publish').configure {
+	dependsOn 'jar'
+}
+
+tasks.named('processResources', ProcessResources).configure {
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+}
+
+artifacts {
+	archives sourcesJar
+	archives deobfJar
+}
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifact jar
+        }
+    }
+    repositories {
+        maven {
+            url "file:///${project.projectDir}/mcmodsrepo"
+        }
+    }
+}
+
+tasks.curseforge.dependsOn jar
+
+
+curseforge {
+  project {
+    id = '443915'
+    changelog = 'You can find changelog at: https://aurilis.dev/'
+    releaseType = 'release'
+    addGameVersion minecraft_version
+
+    mainArtifact(jar) {
+      relations {
+        requiredDependency 'electrodynamics'
+        optionalDependency 'nuclear-science'
+      }
+      displayName=project.name+' ' + project.version
+    }
+  }
+}

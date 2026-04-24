@@ -1,0 +1,80 @@
+package ballistix.datagen.client;
+
+import ballistix.References;
+import ballistix.common.item.ItemGrenade.SubtypeGrenade;
+import ballistix.common.item.ItemMinecart.SubtypeMinecart;
+import ballistix.registers.BallistixBlocks;
+import ballistix.registers.BallistixItems;
+import ballistix.registers.BallistixPlusBlocks;
+import electrodynamics.datagen.client.ElectrodynamicsItemModelsProvider;
+import net.minecraft.data.PackOutput;
+import net.minecraft.world.item.ItemDisplayContext;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+
+public class BallistixItemModelsProvider extends ElectrodynamicsItemModelsProvider {
+
+	public BallistixItemModelsProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
+		super(output, existingFileHelper, References.ID);
+	}
+
+	@Override
+	protected void registerModels() {
+
+		for (SubtypeGrenade grenade : SubtypeGrenade.values()) {
+			layeredItem(BallistixItems.getItem(grenade), Parent.GENERATED, itemLoc("grenade/" + name(BallistixItems.getItem(grenade))));
+		}
+
+		for (SubtypeMinecart minecart : SubtypeMinecart.values()) {
+			layeredItem(BallistixItems.getItem(minecart), Parent.GENERATED, itemLoc("minecart/" + BallistixItems.getItem(minecart)));
+
+		}
+
+		layeredItem(BallistixItems.ITEM_DEFUSER, Parent.GENERATED, itemLoc(name(BallistixItems.ITEM_DEFUSER)));
+		layeredItem(BallistixItems.ITEM_DUSTPOISON, Parent.GENERATED, itemLoc(name(BallistixItems.ITEM_DUSTPOISON)));
+		layeredItem(BallistixItems.ITEM_LASERDESIGNATOR, Parent.GENERATED, itemLoc(name(BallistixItems.ITEM_LASERDESIGNATOR)));
+		layeredItem(BallistixItems.ITEM_RADARGUN, Parent.GENERATED, itemLoc(name(BallistixItems.ITEM_RADARGUN)));
+		layeredItem(BallistixItems.ITEM_SCANNER, Parent.GENERATED, itemLoc(name(BallistixItems.ITEM_SCANNER)));
+		layeredItem(BallistixItems.ITEM_BULLET, Parent.GENERATED, itemLoc(name(BallistixItems.ITEM_BULLET)));
+
+		simpleBlockItem(BallistixBlocks.blockRadar.get(), existingBlock(blockLoc("radarfull"))).transforms()
+				//
+				.transform(ItemDisplayContext.GUI).rotation(30, 225, 0).translation(0, -1.5F, 0).scale(0.45F).end()
+				//
+				.transform(ItemDisplayContext.GROUND).rotation(0, 0, 0).translation(0, 3, 0).scale(0.25F).end()
+				//
+				.transform(ItemDisplayContext.FIXED).rotation(0, 0, 0).translation(0, 0, 0).scale(0.5F).end()
+				//
+				.transform(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND).rotation(75, 45, 0).translation(0, 2.5F, 0).scale(0.375F).end()
+				//
+				.transform(ItemDisplayContext.FIRST_PERSON_RIGHT_HAND).rotation(0, 45, 0).translation(0, 0, 0).scale(0.40F).end()
+				//
+				.transform(ItemDisplayContext.THIRD_PERSON_LEFT_HAND).rotation(75, 225, 0).translation(0, 2.5F, 0).scale(0.375F).end()
+				//
+				.transform(ItemDisplayContext.FIRST_PERSON_LEFT_HAND).rotation(0, 225, 0).translation(0, 0, 0).scale(0.40F).end();
+
+		simpleBlockItem(BallistixBlocks.blockFireControlRadar.get(), existingBlock(blockLoc("firecontrolradarfull"))).transforms()
+				//
+				.transform(ItemDisplayContext.GUI).rotation(30, 225, 0).translation(0, -1.5F, 0).scale(0.45F).end()
+				//
+				.transform(ItemDisplayContext.GROUND).rotation(0, 0, 0).translation(0, 3, 0).scale(0.25F).end()
+				//
+				.transform(ItemDisplayContext.FIXED).rotation(0, 0, 0).translation(0, 0, 0).scale(0.5F).end()
+				//
+				.transform(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND).rotation(75, 45, 0).translation(0, 2.5F, 0).scale(0.375F).end()
+				//
+				.transform(ItemDisplayContext.FIRST_PERSON_RIGHT_HAND).rotation(0, 45, 0).translation(0, 0, 0).scale(0.40F).end()
+				//
+				.transform(ItemDisplayContext.THIRD_PERSON_LEFT_HAND).rotation(75, 225, 0).translation(0, 2.5F, 0).scale(0.375F).end()
+				//
+				.transform(ItemDisplayContext.FIRST_PERSON_LEFT_HAND).rotation(0, 225, 0).translation(0, 0, 0).scale(0.40F).end();
+
+		simpleBlockItem(BallistixBlocks.blockSamTurret.get(), existingBlock(blockLoc("samturretitem")));
+		simpleBlockItem(BallistixBlocks.blockEsmTower.get(), existingBlock(blockLoc("esmtower"))).transforms().transform(ItemDisplayContext.GUI).scale(0.3F).rotation(30.0F, 225.0F, 0.0F).end();
+		simpleBlockItem(BallistixBlocks.blockCiwsTurret.get(), existingBlock(blockLoc("ciwsturretitem")));
+		simpleBlockItem(BallistixBlocks.blockLaserTurret.get(), existingBlock(blockLoc("laserturretitem")));
+		simpleBlockItem(BallistixBlocks.blockRailgunTurret.get(), existingBlock(blockLoc("railgunturretitem")));
+
+		simpleBlockItem(BallistixPlusBlocks.blockHorizontalMissileSilo.get(), existingBlock(blockLoc("horizontal_silo")));
+	}
+
+}
