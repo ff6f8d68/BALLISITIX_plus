@@ -26,6 +26,7 @@ neoForge {
 
     runs {
         client {
+            type = 'client'
             gameDirectory = project.file('run') // Added '='
 
             programArguments.addAll([ // Use addAll for the list
@@ -41,11 +42,13 @@ neoForge {
         }
 
         server {
+            type = 'server'
             gameDirectory = project.file('run') // Added '='
             programArguments.add '--nogui'
         }
 
         data {
+            type = 'data'
             gameDirectory = project.file('run') // Added '='
             programArguments.addAll([
                     '--mod', 'ballistix',
@@ -66,9 +69,11 @@ neoForge {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
-    // Just 'implementation', no 'fg.deobf'
-    implementation files("libs/ed.jar")
-    implementation files("libs/vt.jar")
+    // Local Electrodynamics and Voltalic JARs (must be 1.21.1 versions)
+    implementation "voltaic:voltaic:1.21.1-1.0.2-0"
+    implementation "electrodynamics:electrodynamics:1.21.1-1.0.2"
+    implementation "nuclearscience:nuclearscience:1.21.1-0.8.1-0"
+    
     compileOnly "mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"
     compileOnly "mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}"
     runtimeOnly "mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}"
@@ -76,21 +81,27 @@ dependencies {
 
 repositories {
     flatDir {
-        dir 'libs'
+        dirs 'libs'
     }
 	mavenCentral()
 	maven {
 	    name = "NeoForge"
 	    url = "https://maven.neoforged.net/releases/"
 	}
+    maven {
+        url "https://cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
+	maven {
+	    name = "ModMaven"
+	    url = "https://modmaven.dev/"
+	}
 	maven {
 	    name = "Jared's maven"
 	    url = "https://maven.blamejared.com/"
 	}
-	maven {
-    	name = "ModMaven"
-    	url = "https://modmaven.dev"
-  	}
     maven {
         name = "Valkyrien Skies"
         url = "https://maven.valkyrienskies.org"
