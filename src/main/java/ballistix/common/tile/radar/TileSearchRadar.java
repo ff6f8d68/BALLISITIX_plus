@@ -15,16 +15,16 @@ import ballistix.registers.BallistixBlockTypes;
 import ballistix.registers.BallistixBlocks;
 import ballistix.registers.BallistixMissiles;
 import ballistix.registers.BallistixSounds;
-import electrodynamics.api.capability.ElectrodynamicsCapabilities;
-import electrodynamics.api.sound.SoundAPI;
-import electrodynamics.prefab.properties.Property;
-import electrodynamics.prefab.properties.PropertyType;
-import electrodynamics.prefab.tile.GenericTile;
-import electrodynamics.prefab.tile.components.IComponentType;
-import electrodynamics.prefab.tile.components.type.ComponentContainerProvider;
-import electrodynamics.prefab.tile.components.type.ComponentElectrodynamic;
-import electrodynamics.prefab.tile.components.type.ComponentPacketHandler;
-import electrodynamics.prefab.tile.components.type.ComponentTickable;
+import electrodynamics.registers.ElectrodynamicsCapabilities;
+import net.minecraft.world.level.block.state.properties.Property;
+import voltaic.api.sound.SoundAPI;
+import voltaic.prefab.properties.types.PropertyTypes;
+import voltaic.prefab.tile.GenericTile;
+import voltaic.prefab.tile.components.IComponentType;
+import voltaic.prefab.tile.components.type.ComponentContainerProvider;
+import voltaic.prefab.tile.components.type.ComponentElectrodynamic;
+import voltaic.prefab.tile.components.type.ComponentPacketHandler;
+import voltaic.prefab.tile.components.type.ComponentTickable;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
@@ -40,10 +40,10 @@ import net.minecraft.world.phys.Vec3;
 
 public class TileSearchRadar extends GenericTile {
 
-    public final Property<Boolean> usingWhitelist = property(new Property<>(PropertyType.Boolean, "usingwhitelist", false));
-    public final Property<List<Integer>> whitelistedFrequencies = property(new Property<>(PropertyType.IntegerList, "whitelistedfreqs", new ArrayList<>()));
-    public final Property<Boolean> redstone = property(new Property<>(PropertyType.Boolean, "redstone", false));
-    public final Property<Boolean> isRunning = property(new Property<>(PropertyType.Boolean, "isrunning", false));
+    public final Property<Boolean> usingWhitelist = property(new Property<>(PropertyTypes.Boolean, "usingwhitelist", false));
+    public final Property<List<Integer>> whitelistedFrequencies = property(new Property<>(PropertyTypes.IntegerList, "whitelistedfreqs", new ArrayList<>()));
+    public final Property<Boolean> redstone = property(new Property<>(PropertyTypes.Boolean, "redstone", false));
+    public final Property<Boolean> isRunning = property(new Property<>(PropertyTypes.Boolean, "isrunning", false));
 
     private final AABB searchArea = new AABB(getBlockPos()).inflate(Constants.RADAR_RANGE);
     private final HashSet<VirtualMissile> trackedMissiles = new HashSet<>();

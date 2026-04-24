@@ -6,9 +6,9 @@ import org.jetbrains.annotations.Nullable;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 
-import electrodynamics.api.screen.ITexture;
-import electrodynamics.prefab.screen.component.types.ScreenComponentGeneric;
-import electrodynamics.prefab.utilities.RenderingUtils;
+import voltaic.api.screen.ITexture;
+import voltaic.prefab.screen.component.types.ScreenComponentGeneric;
+import voltaic.prefab.utilities.RenderingUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;

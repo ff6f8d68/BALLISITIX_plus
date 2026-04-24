@@ -1,83 +1,85 @@
 package ballistix.prefab.screen;
 
 import ballistix.api.radar.IDetected;
+import ballistix.client.screen.ScreenSearchRadar;
 import ballistix.common.inventory.container.ContainerSearchRadar;
 import ballistix.common.tile.radar.TileSearchRadar;
 import ballistix.prefab.utils.BallistixTextUtils;
-import electrodynamics.api.screen.ITexture;
-import electrodynamics.prefab.screen.GenericScreen;
-import electrodynamics.prefab.screen.component.editbox.ScreenComponentEditBox;
-import electrodynamics.prefab.screen.component.types.ScreenComponentGeneric;
-import electrodynamics.prefab.utilities.math.Color;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.components.AbstractWidget;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
-public class ScreenComponentDetection extends ScreenComponentGeneric {
+public class ScreenComponentDetection extends AbstractWidget {
 
     private IDetected.Detected detection;
+    private static final ResourceLocation TEXTURE_LOCATION = new ResourceLocation("ballistix", "textures/screen/component/frequency.png");
 
     public ScreenComponentDetection(int x, int y, int width, int height) {
-        super(x, y, width, height);
+        super(x, y, width, height, Component.empty());
     }
 
     @Override
-    public void renderBackground(GuiGraphics graphics, int xAxis, int yAxis, int guiWidth, int guiHeight) {
-
-        if (!isVisible()) {
+    protected void renderWidget(GuiGraphics graphics, int xAxis, int yAxis, float partialTick) {
+        if (!this.visible) {
             return;
         }
 
-        GenericScreen<ContainerSearchRadar> screen = (GenericScreen<ContainerSearchRadar>) gui;
+        ScreenSearchRadar screen = (ScreenSearchRadar) Minecraft.getInstance().screen;
+        if (screen == null) {
+            return;
+        }
 
-        TileSearchRadar tile = screen.getMenu().getHostFromIntArray();
+        ContainerSearchRadar menu = (ContainerSearchRadar) screen.getMenu();
+        TileSearchRadar tile = menu.getHostFromIntArray();
 
         if (tile == null) {
             return;
         }
 
-        ITexture texture = RadarTextures.FREQUENCY;
-
-        ScreenComponentEditBox.drawExpandedBox(graphics, texture.getLocation(), xLocation + guiWidth, yLocation + guiHeight, width, height);
+        // Draw background box
+        graphics.blit(TEXTURE_LOCATION, getX(), getY(), 0, 0, width, height, width, height);
 
         if(detection == null) {
             return;
         }
 
-        graphics.renderItem(new ItemStack(detection.getItem()), guiWidth + xLocation + 2, guiHeight + yLocation + 4);
+        graphics.renderItem(new ItemStack(detection.getItem()), getX() + 2, getY() + 4);
 
-        Font font = screen.getFontRenderer();
+        Font font = Minecraft.getInstance().font;
 
         Component text = Component.literal(new BlockPos((int)detection.getPosition().x,(int)detection.getPosition().y,(int)detection.getPosition().z).toString());
 
-        int x = xLocation + 20;
-        int y = yLocation + 4;
+        int x = getX() + 20;
+        int y = getY() + 4;
 
         int maxWidth = width - x - 2;
 
-        int width = font.width(text);
+        int textWidth = font.width(text);
 
         float scale = 1.0F;
 
-        if(width > maxWidth) {
-            scale = (float) maxWidth / (float) width;
+        if(textWidth > maxWidth) {
+            scale = (float) maxWidth / (float) textWidth;
             y += (int) ((font.lineHeight - font.lineHeight * scale) / 2.0F);
         }
 
         graphics.pose().pushPose();
 
-        graphics.pose().translate(guiWidth + x, guiHeight + y, 0);
+        graphics.pose().translate(x, y, 0);
 
-        graphics.pose().scale(scale, scale, 0);
+        graphics.pose().scale(scale, scale, 1.0F);
 
-        graphics.drawString(font, text, 0, 0, ScreenComponentCustomRender.TEXT_GRAY.color(), false);
+        graphics.drawString(font, text, 0, 0, ScreenComponentCustomRender.TEXT_GRAY, false);
 
         graphics.pose().popPose();
 
-        y = yLocation + 15;
+        y = getY() + 15;
 
         if(detection.showBearing()) {
 
@@ -101,24 +103,26 @@ public class ScreenComponentDetection extends ScreenComponentGeneric {
 
             scale = 1.0F;
 
-            if(width > maxWidth) {
-                scale = (float) maxWidth / (float) width;
+            textWidth = font.width(text);
+
+            if(textWidth > maxWidth) {
+                scale = (float) maxWidth / (float) textWidth;
                 y += (int) ((font.lineHeight - font.lineHeight * scale) / 2.0F);
             }
 
             graphics.pose().pushPose();
 
-            graphics.pose().translate(guiWidth + x, guiHeight + y, 0);
+            graphics.pose().translate(x, y, 0);
 
-            graphics.pose().scale(scale, scale, 0);
+            graphics.pose().scale(scale, scale, 1.0F);
 
-            graphics.drawString(font, text, 0, 0, ScreenComponentCustomRender.TEXT_GRAY.color(), false);
+            graphics.drawString(font, text, 0, 0, ScreenComponentCustomRender.TEXT_GRAY, false);
 
             graphics.pose().popPose();
 
 
         } else {
-            graphics.drawString(font, BallistixTextUtils.gui("radar.bearingunknown"), guiWidth + x, guiHeight + y, Color.BLACK.color(), false);
+            graphics.drawString(font, BallistixTextUtils.gui("radar.bearingunknown"), x, y, 0xFF000000, false);
         }
 
     }
@@ -127,4 +131,8 @@ public class ScreenComponentDetection extends ScreenComponentGeneric {
         this.detection = detection;
     }
 
+    @Override
+    protected void updateWidgetNarration(net.minecraft.client.gui.narration.NarrationElementOutput narration) {
+        // No narration needed
+    }
 }
