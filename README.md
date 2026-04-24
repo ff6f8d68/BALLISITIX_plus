@@ -1,3 +1,5 @@
-Ballistix
+# Ballistix +
+adding things to ballistix
 
-Modpack permission list: https://docs.google.com/spreadsheets/d/1L5j9d4VLD5U-IsB77o24luxfnnlFZzQYR-ZAyxIeNow/edit?usp=sharing
+# !!NOTICE!!
+i give up, this project is dead, thats it, the pain of 800+ errors is too much for my 14y/o brain to handle
