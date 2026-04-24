@@ -3,7 +3,7 @@ package ballistix.common.network;
 import java.util.HashSet;
 
 import ballistix.api.capability.BallistixCapabilities;
-import electrodynamics.prefab.tile.GenericTile;
+import voltaic.prefab.tile.GenericTile;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;

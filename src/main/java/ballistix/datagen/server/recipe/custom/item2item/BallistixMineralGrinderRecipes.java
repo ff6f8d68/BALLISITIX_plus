@@ -4,12 +4,12 @@ import java.util.function.Consumer;
 
 import ballistix.References;
 import ballistix.registers.BallistixItems;
-import electrodynamics.datagen.server.recipe.types.custom.item2item.ElectrodynamicsMineralGrinderRecipes;
+import voltaic.datagen.server.recipe.types.custom.item2item.VoltaicMineralGrinderRecipes;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 
-public class BallistixMineralGrinderRecipes extends ElectrodynamicsMineralGrinderRecipes {
+public class BallistixMineralGrinderRecipes extends VoltaicMineralGrinderRecipes {
 
 	public BallistixMineralGrinderRecipes() {
 		super(References.ID);

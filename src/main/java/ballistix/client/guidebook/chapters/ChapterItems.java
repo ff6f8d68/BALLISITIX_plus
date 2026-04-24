@@ -2,11 +2,11 @@ package ballistix.client.guidebook.chapters;
 
 import ballistix.prefab.utils.BallistixTextUtils;
 import ballistix.registers.BallistixItems;
-import electrodynamics.client.guidebook.ScreenGuidebook;
-import electrodynamics.client.guidebook.utils.components.Chapter;
-import electrodynamics.client.guidebook.utils.components.Module;
-import electrodynamics.client.guidebook.utils.pagedata.graphics.ItemWrapperObject;
-import electrodynamics.client.guidebook.utils.pagedata.text.TextWrapperObject;
+import voltaic.client.guidebook.ScreenGuidebook;
+import voltaic.client.guidebook.utils.components.Chapter;
+import voltaic.client.guidebook.utils.components.Module;
+import voltaic.client.guidebook.utils.pagedata.graphics.ItemWrapperObject;
+import voltaic.client.guidebook.utils.pagedata.text.TextWrapperObject;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.MutableComponent;
 

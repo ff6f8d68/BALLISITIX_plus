@@ -3,8 +3,8 @@ package ballistix.prefab.screen;
 import java.util.function.Consumer;
 
 import ballistix.References;
-import electrodynamics.api.screen.ITexture;
-import electrodynamics.prefab.screen.component.types.ScreenComponentGeneric;
+import voltaic.api.screen.ITexture;
+import voltaic.prefab.screen.component.ScreenComponentGeneric;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.resources.ResourceLocation;
 

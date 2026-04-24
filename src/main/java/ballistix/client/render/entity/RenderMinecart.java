@@ -5,7 +5,7 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 
 import ballistix.common.entity.EntityMinecart;
 import ballistix.registers.BallistixBlocks;
-import electrodynamics.prefab.utilities.math.MathUtils;
+import voltaic.prefab.utilities.math.MathUtils;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.MinecartModel;
 import net.minecraft.client.model.geom.ModelLayers;

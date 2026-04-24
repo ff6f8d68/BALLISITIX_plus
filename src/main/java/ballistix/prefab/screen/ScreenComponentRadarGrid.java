@@ -3,11 +3,11 @@ package ballistix.prefab.screen;
 import ballistix.client.screen.ScreenFireControlRadar;
 import ballistix.common.settings.Constants;
 import ballistix.common.tile.radar.TileFireControlRadar;
-import electrodynamics.prefab.screen.component.types.ScreenComponentGeneric;
-import electrodynamics.prefab.tile.components.IComponentType;
-import electrodynamics.prefab.tile.components.type.ComponentTickable;
-import electrodynamics.prefab.utilities.math.Color;
-import electrodynamics.prefab.utilities.math.MathUtils;
+import voltaic.prefab.screen.component.ScreenComponentGeneric;
+import voltaic.prefab.tile.components.IComponentType;
+import voltaic.prefab.tile.components.type.ComponentTickable;
+import voltaic.prefab.utilities.math.Color;
+import voltaic.prefab.utilities.math.MathUtils;
 import net.minecraft.client.gui.GuiGraphics;
 
 public class ScreenComponentRadarGrid extends ScreenComponentGeneric {
@@ -56,13 +56,13 @@ public class ScreenComponentRadarGrid extends ScreenComponentGeneric {
 
             //OUTLINE
 
-            graphics.fill(x - 3, y - 3, x + 1, y + height + 3, ScreenComponentCustomRender.TEXT_GRAY.color());
+            graphics.fill(x - 3, y - 3, x + 1, y + height + 3, ScreenComponentCustomRender.TEXT_GRAY);
 
-            graphics.fill(x + width - 1, y - 3, x + width + 3, y + height + 3, ScreenComponentCustomRender.TEXT_GRAY.color());
+            graphics.fill(x + width - 1, y - 3, x + width + 3, y + height + 3, ScreenComponentCustomRender.TEXT_GRAY);
 
-            graphics.fill(x, y - 3, x + width, y + 1, ScreenComponentCustomRender.TEXT_GRAY.color());
+            graphics.fill(x, y - 3, x + width, y + 1, ScreenComponentCustomRender.TEXT_GRAY);
 
-            graphics.fill(x, y + height - 1, x + width, y + height + 3, ScreenComponentCustomRender.TEXT_GRAY.color());
+            graphics.fill(x, y + height - 1, x + width, y + height + 3, ScreenComponentCustomRender.TEXT_GRAY);
 
             return;
 
@@ -104,13 +104,13 @@ public class ScreenComponentRadarGrid extends ScreenComponentGeneric {
 
         //OUTLINE
 
-        graphics.fill(x - 3, y - 3, x + 1, y + height + 3, ScreenComponentCustomRender.TEXT_GRAY.color());
+        graphics.fill(x - 3, y - 3, x + 1, y + height + 3, ScreenComponentCustomRender.TEXT_GRAY);
 
-        graphics.fill(x + width - 1, y - 3, x + width + 3, y + height + 3, ScreenComponentCustomRender.TEXT_GRAY.color());
+        graphics.fill(x + width - 1, y - 3, x + width + 3, y + height + 3, ScreenComponentCustomRender.TEXT_GRAY);
 
-        graphics.fill(x, y - 3, x + width, y + 1, ScreenComponentCustomRender.TEXT_GRAY.color());
+        graphics.fill(x, y - 3, x + width, y + 1, ScreenComponentCustomRender.TEXT_GRAY);
 
-        graphics.fill(x, y + height - 1, x + width, y + height + 3, ScreenComponentCustomRender.TEXT_GRAY.color());
+        graphics.fill(x, y + height - 1, x + width, y + height + 3, ScreenComponentCustomRender.TEXT_GRAY);
 
         graphics.fill((int) Math.floor(x + center - 1), (int) Math.floor(y + center - 1), (int) Math.ceil(x + center + 1), (int) Math.ceil(y + center + 1), ScreenComponentCustomRender.JEI_TEXT_GRAY.color());
 

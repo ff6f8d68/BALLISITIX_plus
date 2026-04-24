@@ -6,8 +6,8 @@ import com.mojang.blaze3d.vertex.PoseStack;
 
 import ballistix.client.ClientRegister;
 import ballistix.common.tile.TileESMTower;
-import electrodynamics.client.render.tile.AbstractTileRenderer;
-import electrodynamics.prefab.utilities.RenderingUtils;
+import voltaic.client.render.tile.AbstractTileRenderer;
+import voltaic.prefab.utilities.RenderingUtils;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;

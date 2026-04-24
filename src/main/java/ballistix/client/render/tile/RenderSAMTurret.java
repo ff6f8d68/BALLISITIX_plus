@@ -8,10 +8,10 @@ import com.mojang.blaze3d.vertex.PoseStack;
 
 import ballistix.client.ClientRegister;
 import ballistix.common.tile.turret.antimissile.TileTurretSAM;
-import electrodynamics.client.render.tile.AbstractTileRenderer;
-import electrodynamics.prefab.tile.components.IComponentType;
-import electrodynamics.prefab.tile.components.type.ComponentInventory;
-import electrodynamics.prefab.utilities.math.MathUtils;
+import voltaic.client.render.tile.AbstractTileRenderer;
+import voltaic.prefab.tile.components.IComponentType;
+import voltaic.prefab.tile.components.type.ComponentInventory;
+import voltaic.prefab.utilities.math.MathUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;

@@ -9,9 +9,9 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import ballistix.client.ClientRegister;
 import ballistix.common.tile.turret.antimissile.TileTurretLaser;
 import ballistix.common.tile.turret.antimissile.TileTurretSAM;
-import electrodynamics.client.render.tile.AbstractTileRenderer;
-import electrodynamics.prefab.utilities.RenderingUtils;
-import electrodynamics.prefab.utilities.math.MathUtils;
+import voltaic.client.render.tile.AbstractTileRenderer;
+import voltaic.prefab.utilities.RenderingUtils;
+import voltaic.prefab.utilities.math.MathUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
@@ -86,7 +86,7 @@ public class RenderLaserTurret extends AbstractTileRenderer<TileTurretLaser> {
 
         AABB box = new AABB(0.5, 1, 0.46875, mag, 1.0625, 0.53125);
 
-        TextureAtlasSprite sprite = electrodynamics.client.ClientRegister.CACHED_TEXTUREATLASSPRITES.get(electrodynamics.client.ClientRegister.TEXTURE_WHITE);
+        TextureAtlasSprite sprite = voltaic.client.ClientRegister.CACHED_TEXTUREATLASSPRITES.get(voltaic.client.ClientRegister.TEXTURE_WHITE);
 
         RenderingUtils.renderFilledBoxNoOverlay(matrixStackIn, bufferIn.getBuffer(RenderType.solid()), box, 1.0F, 0, 0, 1.0F, sprite.getU0(), sprite.getV0(), sprite.getU1(), sprite.getV1(), combinedLightIn);
 

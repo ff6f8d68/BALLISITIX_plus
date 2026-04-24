@@ -2,7 +2,7 @@ package ballistix.common.block.subtype;
 
 import ballistix.References;
 import ballistix.common.settings.Constants;
-import electrodynamics.api.ISubtype;
+import voltaic.api.ISubtype;
 import net.minecraft.resources.ResourceLocation;
 
 public enum SubtypeMissile implements ISubtype {

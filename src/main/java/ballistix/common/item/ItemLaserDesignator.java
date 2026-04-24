@@ -11,15 +11,15 @@ import ballistix.bplus.tile.TileBigDartPod;
 import ballistix.bplus.tile.TileDesignator; // Import TileDesignator
 import ballistix.prefab.utils.BallistixTextUtils;
 import ballistix.registers.BallistixCreativeTabs;
-import electrodynamics.common.tile.TileMultiSubnode;
-import electrodynamics.prefab.item.ElectricItemProperties;
-import electrodynamics.prefab.item.ItemElectric;
-import electrodynamics.prefab.properties.Property;
-import electrodynamics.prefab.tile.GenericTile;
-import electrodynamics.prefab.utilities.math.MathUtils;
-import electrodynamics.prefab.utilities.object.Location;
-import electrodynamics.prefab.utilities.object.TransferPack;
-import electrodynamics.registers.ElectrodynamicsItems;
+import voltaic.common.tile.TileMultiSubnode;
+import voltaic.prefab.item.ElectricItemProperties;
+import voltaic.prefab.item.ItemElectric;
+import voltaic.prefab.properties.Property;
+import voltaic.prefab.tile.GenericTile;
+import voltaic.prefab.utilities.math.MathUtils;
+import voltaic.prefab.utilities.object.Location;
+import voltaic.prefab.utilities.object.TransferPack;
+import voltaic.registers.VoltaicItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -46,7 +46,7 @@ public class ItemLaserDesignator extends ItemElectric {
 	}
 
 	protected ItemLaserDesignator(Supplier<CreativeModeTab> tab) {
-		super((ElectricItemProperties) new ElectricItemProperties().capacity(1666666.66667).receive(TransferPack.joulesVoltage(1666666.66667 / (120.0 * 20.0), 120)).extract(TransferPack.joulesVoltage(1666666.66667 / (120.0 * 20.0), 120)).stacksTo(1), tab, item -> ElectrodynamicsItems.ITEM_BATTERY.get());
+		super((ElectricItemProperties) new ElectricItemProperties().capacity(1666666.66667).receive(TransferPack.joulesVoltage(1666666.66667 / (120.0 * 20.0), 120)).extract(TransferPack.joulesVoltage(1666666.66667 / (120.0 * 20.0), 120)).stacksTo(1), tab, item -> VoltaicItems.ITEM_BATTERY.get());
 	}
 
 	@Override

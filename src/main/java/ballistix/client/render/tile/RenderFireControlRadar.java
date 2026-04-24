@@ -8,8 +8,8 @@ import com.mojang.blaze3d.vertex.PoseStack;
 
 import ballistix.client.ClientRegister;
 import ballistix.common.tile.radar.TileFireControlRadar;
-import electrodynamics.client.render.tile.AbstractTileRenderer;
-import electrodynamics.prefab.utilities.math.MathUtils;
+import voltaic.client.render.tile.AbstractTileRenderer;
+import voltaic.prefab.utilities.math.MathUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;

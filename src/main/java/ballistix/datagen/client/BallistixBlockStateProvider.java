@@ -6,14 +6,14 @@ import ballistix.References;
 import ballistix.common.block.subtype.SubtypeBlast;
 import ballistix.registers.BallistixBlocks;
 import ballistix.registers.BallistixPlusBlocks;
-import electrodynamics.datagen.client.ElectrodynamicsBlockStateProvider;
+import voltaic.datagen.client.VoltaicBlockStateProvider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.client.model.generators.BlockModelBuilder;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
-public class BallistixBlockStateProvider extends ElectrodynamicsBlockStateProvider {
+public class BallistixBlockStateProvider extends VoltaicBlockStateProvider {
 
 	public BallistixBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
 		super(output, exFileHelper, References.ID);

@@ -5,15 +5,15 @@ import ballistix.common.settings.Constants;
 import ballistix.prefab.utils.BallistixTextUtils;
 import ballistix.registers.BallistixBlocks;
 import ballistix.registers.BallistixItems;
-import electrodynamics.client.guidebook.ScreenGuidebook;
-import electrodynamics.client.guidebook.utils.components.Chapter;
-import electrodynamics.client.guidebook.utils.components.Module;
-import electrodynamics.client.guidebook.utils.pagedata.graphics.AbstractGraphicWrapper;
-import electrodynamics.client.guidebook.utils.pagedata.graphics.ImageWrapperObject;
-import electrodynamics.client.guidebook.utils.pagedata.graphics.ItemWrapperObject;
-import electrodynamics.client.guidebook.utils.pagedata.text.TextWrapperObject;
-import electrodynamics.common.item.subtype.SubtypeRod;
-import electrodynamics.registers.ElectrodynamicsItems;
+import voltaic.client.guidebook.ScreenGuidebook;
+import voltaic.client.guidebook.utils.components.Chapter;
+import voltaic.client.guidebook.utils.components.Module;
+import voltaic.client.guidebook.utils.pagedata.graphics.AbstractGraphicWrapper;
+import voltaic.client.guidebook.utils.pagedata.graphics.ImageWrapperObject;
+import voltaic.client.guidebook.utils.pagedata.graphics.ItemWrapperObject;
+import voltaic.client.guidebook.utils.pagedata.text.TextWrapperObject;
+import voltaic.common.item.subtype.SubtypeRod;
+import voltaic.registers.VoltaicItems;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
@@ -85,7 +85,7 @@ public class ChapterMissileDefense extends Chapter {
         // Railgun Turret
         pageData.add(new TextWrapperObject(BallistixBlocks.blockRailgunTurret.get().asItem().getDescription().copy().withStyle(ChatFormatting.BOLD)).setCentered().setNewPage());
         pageData.add(new ItemWrapperObject(7 + ScreenGuidebook.TEXT_WIDTH / 2 - 16, 10, 32, 32, 32, 2.0F, BallistixBlocks.blockRailgunTurret.get().asItem()));
-        pageData.add(new TextWrapperObject(BallistixTextUtils.guidebook("chapter.missiledefense.railgunturret1", ElectrodynamicsItems.getItem(SubtypeRod.steel).getDescription().copy().withStyle(ChatFormatting.BOLD), Constants.RAILGUN_TURRET_BASE_RANGE, Constants.RAILGUN_TURRET_COOLDOWN)).setSeparateStart().setIndentions(1));
+        pageData.add(new TextWrapperObject(BallistixTextUtils.guidebook("chapter.missiledefense.railgunturret1", VoltaicItems.getItem(SubtypeRod.steel).getDescription().copy().withStyle(ChatFormatting.BOLD), Constants.RAILGUN_TURRET_BASE_RANGE, Constants.RAILGUN_TURRET_COOLDOWN)).setSeparateStart().setIndentions(1));
         pageData.add(new TextWrapperObject(BallistixTextUtils.guidebook("chapter.missiledefense.railgunturret2")).setSeparateStart().setIndentions(1));
 
 

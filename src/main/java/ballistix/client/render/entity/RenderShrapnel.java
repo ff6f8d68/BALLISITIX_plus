@@ -8,7 +8,7 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 
 import ballistix.client.ClientRegister;
 import ballistix.common.entity.EntityShrapnel;
-import electrodynamics.prefab.utilities.math.MathUtils;
+import voltaic.prefab.utilities.math.MathUtils;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderer;

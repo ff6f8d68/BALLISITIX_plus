@@ -17,7 +17,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.common.world.ForgeChunkManager;
-import net.neoforged.neoforge.network.NetworkHooks;
+import net.neoforged.neoforge.network.registration.PayloadRegistrar;
 
 public class EntityBlast extends Entity {
 

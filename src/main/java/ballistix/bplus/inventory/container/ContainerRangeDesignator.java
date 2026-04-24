@@ -1,8 +1,8 @@
 package ballistix.bplus.inventory.container;
 
 import ballistix.registers.BallistixMenuTypes;
-import electrodynamics.prefab.inventory.container.GenericContainerBlockEntity;
-import electrodynamics.prefab.tile.GenericTile;
+import voltaic.prefab.inventory.container.GenericContainerBlockEntity;
+import voltaic.prefab.tile.GenericTile;
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;

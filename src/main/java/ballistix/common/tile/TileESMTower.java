@@ -1,5 +1,6 @@
 package ballistix.common.tile;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -13,18 +14,17 @@ import ballistix.common.settings.Constants;
 import ballistix.common.tile.radar.TileFireControlRadar;
 import ballistix.common.tile.radar.TileSearchRadar;
 import ballistix.registers.BallistixBlockTypes;
-import electrodynamics.api.capability.ElectrodynamicsCapabilities;
-import electrodynamics.api.multiblock.Subnode;
-import electrodynamics.api.multiblock.parent.IMultiblockParentTile;
-import electrodynamics.common.tile.TileMultiSubnode;
-import electrodynamics.prefab.properties.Property;
-import electrodynamics.prefab.properties.PropertyType;
-import electrodynamics.prefab.tile.GenericTile;
-import electrodynamics.prefab.tile.components.IComponentType;
-import electrodynamics.prefab.tile.components.type.ComponentContainerProvider;
-import electrodynamics.prefab.tile.components.type.ComponentElectrodynamic;
-import electrodynamics.prefab.tile.components.type.ComponentPacketHandler;
-import electrodynamics.prefab.tile.components.type.ComponentTickable;
+import net.minecraft.world.level.block.state.properties.Property;
+import voltaic.api.multiblock.subnodebased.Subnode;
+import voltaic.api.multiblock.subnodebased.parent.IMultiblockParentTile;
+import voltaic.api.multiblock.subnodebased.TileMultiSubnode;
+import voltaic.prefab.properties.PropertyManager;
+import voltaic.prefab.tile.GenericTile;
+import voltaic.prefab.tile.components.IComponentType;
+import voltaic.prefab.tile.components.type.ComponentContainerProvider;
+import voltaic.prefab.tile.components.type.ComponentElectrodynamic;
+import voltaic.prefab.tile.components.type.ComponentPacketHandler;
+import voltaic.prefab.tile.components.type.ComponentTickable;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
@@ -38,10 +38,9 @@ import net.minecraft.world.level.LightLayer;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
-import net.neoforged.neoforge.event.TickEvent.Phase;
-import net.neoforged.neoforge.event.TickEvent.ServerTickEvent;
+import net.neoforged.neoforge.event.tick.ServerTickEvent;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.Mod.EventBusSubscriber;
+import net.neoforged.fml.common.EventBusSubscriber;
 
 public class TileESMTower extends GenericTile implements IMultiblockParentTile {
 
@@ -49,9 +48,9 @@ public class TileESMTower extends GenericTile implements IMultiblockParentTile {
     public static final ConcurrentHashMap<ResourceKey<Level>, HashSet<TileFireControlRadar>> FIRE_CONTROL_RADARS = new ConcurrentHashMap<>();
     public static final ConcurrentHashMap<ResourceKey<Level>, HashSet<TileESMTower>> ESM_TOWERS = new ConcurrentHashMap<>();
 
-    public final Property<Boolean> active = property(new Property<>(PropertyType.Boolean, "active", false));
-    public final Property<Boolean> searchRadarDetected = property(new Property<>(PropertyType.Boolean, "searchradar", false));
-    public final Property<ArrayList<BlockPos>> fireControlRadars = property(new Property<>(PropertyType.BlockPosList, "firecontrolradars", new ArrayList<BlockPos>()));
+    public final Property<Boolean> active = property(new Property<>(type.Boolean, "active", false));
+    public final Property<Boolean> searchRadarDetected = property(new Property<>(type.Boolean, "searchradar", false));
+    public final Property<ArrayList<BlockPos>> fireControlRadars = property(new Property<>(Type.BlockPosList, "firecontrolradars", new ArrayList<BlockPos>()));
 
     private final AABB searchArea = new AABB(getBlockPos()).inflate(Constants.ESM_TOWER_SEARCH_RADIUS);
 
@@ -59,7 +58,7 @@ public class TileESMTower extends GenericTile implements IMultiblockParentTile {
         super(BallistixBlockTypes.TILE_ESMTOWER.get(), worldPos, blockState);
         addComponent(new ComponentTickable(this).tickServer(this::tickServer));
         addComponent(new ComponentPacketHandler(this));
-        addComponent(new ComponentElectrodynamic(this, false, true).voltage(ElectrodynamicsCapabilities.DEFAULT_VOLTAGE * 4).setInputDirections(Direction.DOWN).maxJoules(Constants.ESM_TOWER_USAGE_PER_TICK * 20));
+        addComponent(new ComponentElectrodynamic(this, false, true).voltage(voltaicCapabilities.DEFAULT_VOLTAGE * 4).setInputDirections(Direction.DOWN).maxJoules(Constants.ESM_TOWER_USAGE_PER_TICK * 20));
         addComponent(new ComponentContainerProvider("container.esmtower", this).createMenu((id, player) -> new ContainerESMTower(id, player, new SimpleContainer(0), getCoordsArray())));
     }
 
@@ -161,13 +160,13 @@ public class TileESMTower extends GenericTile implements IMultiblockParentTile {
     }
 
 
-    @EventBusSubscriber(modid = References.ID, bus = EventBusSubscriber.Bus.FORGE)
+    @EventBusSubscriber(modid = References.ID, bus = EventBusSubscriber.Bus.GAME)
     private static class MapHandlerer {
 
         @SubscribeEvent
         public static void clearMaps(ServerTickEvent event) {
         	
-        	if(event.phase == Phase.START) {
+        	if(false /* Refactored to .Post event */) {
     			return;
     		}
 

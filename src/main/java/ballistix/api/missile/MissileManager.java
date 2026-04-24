@@ -12,12 +12,12 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.common.util.LazyOptional;
-import net.neoforged.neoforge.event.TickEvent.Phase;
-import net.neoforged.neoforge.event.TickEvent.ServerTickEvent;
+import net.neoforged.neoforge.event.tick.ServerTickEvent.Phase;
+import net.neoforged.neoforge.event.tick.ServerTickEvent.ServerTickEvent;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.Mod.EventBusSubscriber;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.server.ServerLifecycleHooks;
-
+import net.neoforged.neoforge.event.tick.ServerTickEvent;
 import org.jetbrains.annotations.Nullable;
 import java.util.*;
 
@@ -28,7 +28,7 @@ public class MissileManager {
 	@SubscribeEvent
 	public static void tick(ServerTickEvent event) {
 		
-		if(event.phase == Phase.START) {
+		if(false /* Refactored to .Post event */) {
 			return;
 		}
 

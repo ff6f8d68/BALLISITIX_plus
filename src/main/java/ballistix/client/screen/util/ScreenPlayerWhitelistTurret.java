@@ -5,8 +5,8 @@ import com.mojang.blaze3d.platform.InputConstants;
 import ballistix.common.tile.turret.GenericTileTurret;
 import ballistix.prefab.screen.ScreenComponentVerticalSlider;
 import ballistix.prefab.screen.WrapperPlayerWhitelist;
-import electrodynamics.prefab.inventory.container.GenericContainerBlockEntity;
-import electrodynamics.prefab.screen.GenericScreen;
+import voltaic.prefab.inventory.container.types.GenericContainerBlockEntity;
+import voltaic.prefab.screen.GenericScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
 
@@ -32,7 +32,7 @@ public abstract class ScreenPlayerWhitelistTurret<T extends GenericContainerBloc
         super.containerTick();
         whitelistWrapper.tick();
     }
-    
+    /*
     @Override
     public boolean mouseScrolled(double pMouseX, double pMouseY, double delta) {
     	if (whitelistWrapper != null) {
@@ -46,7 +46,7 @@ public abstract class ScreenPlayerWhitelistTurret<T extends GenericContainerBloc
         }
     	return super.mouseScrolled(pMouseX, pMouseY, delta);
     }
-
+    */
     @Override
     public boolean mouseClicked(double mouseX, double mouseY, int button) {
         if (whitelistSlider != null && whitelistSlider.isVisible()) {

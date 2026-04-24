@@ -5,7 +5,7 @@ import java.util.function.Supplier;
 
 import ballistix.prefab.utils.BallistixTextUtils;
 import ballistix.registers.BallistixCreativeTabs;
-import electrodynamics.common.item.ItemElectrodynamics;
+import voltaic.common.item.ItemVoltaic;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -13,7 +13,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 
-public class ItemMissile extends ItemElectrodynamics {
+public class ItemMissile extends ItemVoltaic {
 
 	public final int id;
 	public final int range;

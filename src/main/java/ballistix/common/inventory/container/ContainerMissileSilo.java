@@ -2,11 +2,11 @@ package ballistix.common.inventory.container;
 
 import ballistix.prefab.BallistixIconTypes;
 import ballistix.registers.BallistixMenuTypes;
-import electrodynamics.prefab.inventory.container.GenericContainerBlockEntity;
-import electrodynamics.prefab.inventory.container.slot.item.SlotGeneric;
-import electrodynamics.prefab.screen.component.types.ScreenComponentSlot;
-import electrodynamics.prefab.tile.GenericTile;
-import electrodynamics.prefab.utilities.math.Color;
+import voltaic.prefab.inventory.container.types.GenericContainerBlockEntity;
+import voltaic.prefab.inventory.container.slot.item.SlotGeneric;
+import voltaic.prefab.screen.component.types.ScreenComponentSlot;
+import voltaic.prefab.tile.GenericTile;
+import voltaic.prefab.utilities.math.Color;
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
@@ -27,8 +27,7 @@ public class ContainerMissileSilo extends GenericContainerBlockEntity<GenericTil
 
 	@Override
 	public void addInventorySlots(Container inv, Inventory playerinv) {
-		playerInvOffset = 20;
-		
+		int playerInvOffset = 20;
 		addSlot(new SlotGeneric(ScreenComponentSlot.SlotType.NORMAL, BallistixIconTypes.MISSILE_DARK, inv, nextIndex(), 90, 20).setIOColor(new Color(0, 240, 255, 255)));
 		addSlot(new SlotGeneric(ScreenComponentSlot.SlotType.NORMAL, BallistixIconTypes.EXPLOSIVE_DARK, inv, nextIndex(), 90, 41).setIOColor(new Color(0, 240, 255, 255)));
 

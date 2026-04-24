@@ -3,10 +3,10 @@ package ballistix.client.render.entity;
 import com.mojang.blaze3d.vertex.PoseStack;
 
 import ballistix.common.entity.EntityBullet;
-import electrodynamics.client.ClientRegister;
-import electrodynamics.prefab.utilities.RenderingUtils;
-import electrodynamics.prefab.utilities.math.Color;
-import electrodynamics.prefab.utilities.math.MathUtils;
+import voltaic.client.ClientRegister;
+import voltaic.prefab.utilities.RenderingUtils;
+import voltaic.prefab.utilities.math.Color;
+import voltaic.prefab.utilities.math.MathUtils;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.culling.Frustum;

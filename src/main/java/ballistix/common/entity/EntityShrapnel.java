@@ -22,7 +22,7 @@ import net.minecraft.world.entity.projectile.ThrowableProjectile;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.Level.ExplosionInteraction;
 import net.minecraft.world.phys.AABB;
-import net.neoforged.neoforge.network.NetworkHooks;
+import net.neoforged.neoforge.network.registration.PayloadRegistrar;
 
 public class EntityShrapnel extends ThrowableProjectile {
 	private static final EntityDataAccessor<Boolean> ISEXPLOSIVE = SynchedEntityData.defineId(EntityShrapnel.class, EntityDataSerializers.BOOLEAN);

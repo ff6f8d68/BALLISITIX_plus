@@ -1,7 +1,7 @@
 package ballistix.registers;
 
-import electrodynamics.common.blockitem.types.BlockItemDescriptable;
-import electrodynamics.prefab.utilities.ElectroTextUtils;
+import voltaic.common.blockitem.types.BlockItemDescriptable;
+import voltaic.prefab.utilities.ElectroTextUtils;
 import net.neoforged.bus.api.IEventBus;
 
 public class UnifiedBallistixRegister {

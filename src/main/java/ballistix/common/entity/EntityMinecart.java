@@ -35,7 +35,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FluidState;
-import net.neoforged.neoforge.network.NetworkHooks;
+import net.neoforged.neoforge.network.registration.PayloadRegistrar;
 
 public class EntityMinecart extends AbstractMinecart implements IDefusable {
 	private static final EntityDataAccessor<Integer> FUSE = SynchedEntityData.defineId(EntityMinecart.class, EntityDataSerializers.INT);

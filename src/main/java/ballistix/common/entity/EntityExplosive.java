@@ -23,7 +23,7 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.neoforged.neoforge.network.NetworkHooks;
+import net.neoforged.neoforge.network.registration.PayloadRegistrar;
 import net.minecraft.core.registries.BuiltInRegistries;
 
 public class EntityExplosive extends Entity implements IDefusable {

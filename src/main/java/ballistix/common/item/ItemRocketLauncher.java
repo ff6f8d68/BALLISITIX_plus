@@ -6,9 +6,9 @@ import ballistix.common.block.BlockExplosive;
 import ballistix.common.settings.Constants;
 import ballistix.registers.BallistixCreativeTabs;
 import ballistix.registers.BallistixSounds;
-import electrodynamics.common.blockitem.types.BlockItemDescriptable;
-import electrodynamics.common.item.ItemElectrodynamics;
-import electrodynamics.prefab.utilities.NBTUtils;
+import voltaic.common.blockitem.BlockItemDescriptable;
+import voltaic.common.item.ItemVoltaic;
+import voltaic.prefab.utilities.NBTUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -23,7 +23,7 @@ import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 
-public class ItemRocketLauncher extends ItemElectrodynamics {
+public class ItemRocketLauncher extends ItemVoltaic {
 
 	public ItemRocketLauncher() {
 		super(new Properties().stacksTo(1), () -> BallistixCreativeTabs.MAIN.get());

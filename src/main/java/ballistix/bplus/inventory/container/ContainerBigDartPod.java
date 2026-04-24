@@ -2,11 +2,11 @@ package ballistix.bplus.inventory.container;
 
 import ballistix.prefab.BallistixIconTypes;
 import ballistix.registers.BallistixMenuTypes;
-import electrodynamics.prefab.inventory.container.GenericContainerBlockEntity;
-import electrodynamics.prefab.inventory.container.slot.item.SlotGeneric;
-import electrodynamics.prefab.screen.component.types.ScreenComponentSlot;
-import electrodynamics.prefab.tile.GenericTile;
-import electrodynamics.prefab.utilities.math.Color;
+import voltaic.prefab.inventory.container.GenericContainerBlockEntity;
+import voltaic.prefab.inventory.container.slot.item.SlotGeneric;
+import voltaic.prefab.screen.component.types.ScreenComponentSlot;
+import voltaic.prefab.tile.GenericTile;
+import voltaic.prefab.utilities.math.Color;
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;

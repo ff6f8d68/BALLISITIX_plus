@@ -1,7 +1,7 @@
 package ballistix.prefab.screen;
 
-import electrodynamics.prefab.screen.component.types.ScreenComponentGeneric;
-import electrodynamics.prefab.utilities.math.Color;
+import voltaic.prefab.screen.component.ScreenComponentGeneric;
+import voltaic.prefab.utilities.math.Color;
 import net.minecraft.client.gui.GuiGraphics;
 
 public class ScreenComponentFillArea extends ScreenComponentGeneric {

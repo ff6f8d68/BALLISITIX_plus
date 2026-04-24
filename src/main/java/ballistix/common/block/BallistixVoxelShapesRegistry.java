@@ -3,7 +3,7 @@ package ballistix.common.block;
 import java.util.stream.Stream;
 
 import ballistix.registers.BallistixBlocks;
-import electrodynamics.common.block.voxelshapes.VoxelShapes;
+import voltaic.common.block.voxelshapes.VoxelShapes;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.phys.shapes.Shapes;

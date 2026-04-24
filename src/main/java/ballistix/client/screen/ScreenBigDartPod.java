@@ -7,16 +7,16 @@ import ballistix.prefab.screen.ScreenComponentBallistixLabel;
 import ballistix.prefab.screen.ScreenComponentCustomRender;
 import ballistix.prefab.screen.ScreenComponentFillArea;
 import ballistix.prefab.utils.BallistixTextUtils;
-import electrodynamics.api.electricity.formatting.ChatFormatter;
-import electrodynamics.api.electricity.formatting.DisplayUnit;
-import electrodynamics.prefab.screen.GenericScreen;
-import electrodynamics.prefab.screen.component.editbox.ScreenComponentEditBox;
-import electrodynamics.prefab.screen.component.types.guitab.ScreenComponentElectricInfo;
-import electrodynamics.prefab.screen.component.utils.AbstractScreenComponentInfo;
-import electrodynamics.prefab.tile.GenericTile;
-import electrodynamics.prefab.tile.components.IComponentType;
-import electrodynamics.prefab.tile.components.type.ComponentElectrodynamic;
-import electrodynamics.prefab.utilities.math.Color;
+import voltaic.api.electricity.formatting.ChatFormatter;
+import voltaic.api.electricity.formatting.DisplayUnit;
+import voltaic.prefab.screen.GenericScreen;
+import voltaic.prefab.screen.component.editbox.ScreenComponentEditBox;
+import voltaic.prefab.screen.component.types.guitab.ScreenComponentElectricInfo;
+import voltaic.prefab.screen.component.utils.AbstractScreenComponentInfo;
+import voltaic.prefab.tile.GenericTile;
+import voltaic.prefab.tile.components.IComponentType;
+import voltaic.prefab.tile.components.type.ComponentElectrodynamic;
+import voltaic.prefab.utilities.math.Color;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -99,7 +99,7 @@ public class ScreenBigDartPod extends GenericScreen<ContainerBigDartPod> {
                 ChatFormatter.getChatDisplayShort(electro.getJoulesStored(), DisplayUnit.JOULES).withStyle(ChatFormatting.GRAY), 
                 ChatFormatter.getChatDisplayShort(Constants.MISSILESILO_USAGE, DisplayUnit.JOULES).withStyle(ChatFormatting.GRAY))
                 .withStyle(ChatFormatting.DARK_GRAY).getVisualOrderText());
-            list.add(electrodynamics.prefab.utilities.ElectroTextUtils.gui("machine.voltage", 
+            list.add(voltaic.prefab.utilities.ElectroTextUtils.gui("machine.voltage", 
                 ChatFormatter.getChatDisplayShort(electro.getVoltage(), DisplayUnit.VOLTAGE).withStyle(ChatFormatting.GRAY))
                 .withStyle(ChatFormatting.DARK_GRAY).getVisualOrderText());
         }

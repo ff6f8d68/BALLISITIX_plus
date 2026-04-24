@@ -3,8 +3,8 @@ package ballistix.bplus.items;
 import ballistix.common.item.ItemLaserDesignator;
 import ballistix.prefab.utils.BallistixTextUtils;
 import ballistix.registers.BallistixCreativeTabs;
-import electrodynamics.prefab.utilities.math.MathUtils;
-import electrodynamics.prefab.utilities.object.Location;
+import voltaic.prefab.utilities.math.MathUtils;
+import voltaic.prefab.utilities.object.Location;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -21,7 +21,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.phys.Vec3;
-import electrodynamics.prefab.utilities.RenderingUtils;
+import voltaic.prefab.utilities.RenderingUtils;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.network.chat.Component;
@@ -112,7 +112,7 @@ public class ItemRangeDesignator extends ItemLaserDesignator {
         matrixStack.mulPose(MathUtils.rotQuaternionDeg((float)Math.toDegrees(pitch), (float)Math.toDegrees(yaw), 0));
         
         AABB box = new AABB(0, -0.01, -0.01, distance, 0.01, 0.01);
-        TextureAtlasSprite sprite = electrodynamics.client.ClientRegister.CACHED_TEXTUREATLASSPRITES.get(electrodynamics.client.ClientRegister.TEXTURE_WHITE);
+        TextureAtlasSprite sprite = voltaic.client.ClientRegister.CACHED_TEXTUREATLASSPRITES.get(voltaic.client.ClientRegister.TEXTURE_WHITE);
         
         if (sprite != null) {
              RenderingUtils.renderFilledBoxNoOverlay(matrixStack, buffer.getBuffer(RenderType.lightning()), box, 1.0F, 0, 0, 0.5F, sprite.getU0(), sprite.getV0(), sprite.getU1(), sprite.getV1(), 15728880);

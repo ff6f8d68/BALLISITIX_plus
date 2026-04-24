@@ -5,7 +5,7 @@ import ballistix.registers.BallistixCreativeTabs;
 import ballistix.registers.BallistixMissiles;
 import ballistix.registers.BallistixPlusBlocks;
 import ballistix.registers.BallistixItems;
-import electrodynamics.common.blockitem.types.BlockItemDescriptable;
+import voltaic.common.blockitem.types.BlockItemDescriptable;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;

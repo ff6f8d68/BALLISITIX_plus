@@ -2,7 +2,7 @@ package ballistix.common.inventory.container;
 
 import ballistix.common.tile.radar.TileFireControlRadar;
 import ballistix.registers.BallistixMenuTypes;
-import electrodynamics.prefab.inventory.container.GenericContainerBlockEntity;
+import voltaic.prefab.inventory.container.types.GenericContainerBlockEntity;
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;

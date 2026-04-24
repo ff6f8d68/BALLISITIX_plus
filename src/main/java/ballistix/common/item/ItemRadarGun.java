@@ -9,14 +9,14 @@ import ballistix.bplus.tile.TileDesignator;
 import ballistix.common.tile.turret.antimissile.util.TileTurretAntimissile;
 import ballistix.prefab.utils.BallistixTextUtils;
 import ballistix.registers.BallistixCreativeTabs;
-import electrodynamics.common.tile.TileMultiSubnode;
-import electrodynamics.prefab.item.ElectricItemProperties;
-import electrodynamics.prefab.item.ItemElectric;
-import electrodynamics.prefab.utilities.NBTUtils;
-import electrodynamics.prefab.utilities.math.MathUtils;
-import electrodynamics.prefab.utilities.object.Location;
-import electrodynamics.prefab.utilities.object.TransferPack;
-import electrodynamics.registers.ElectrodynamicsItems;
+import voltaic.common.tile.TileMultiSubnode;
+import voltaic.prefab.item.ElectricItemProperties;
+import voltaic.prefab.item.ItemElectric;
+import voltaic.prefab.utilities.NBTUtils;
+import voltaic.prefab.utilities.math.MathUtils;
+import voltaic.prefab.utilities.object.Location;
+import voltaic.prefab.utilities.object.TransferPack;
+import voltaic.registers.VoltaicItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.NbtUtils;
 import net.minecraft.network.chat.Component;
@@ -36,7 +36,7 @@ public class ItemRadarGun extends ItemElectric {
 	public static final double USAGE = 150.0;
 
 	public ItemRadarGun() {
-		super((ElectricItemProperties) new ElectricItemProperties().capacity(1666666.66667).receive(TransferPack.joulesVoltage(1666666.66667 / (120.0 * 20.0), 120)).extract(TransferPack.joulesVoltage(1666666.66667 / (120.0 * 20.0), 120)).stacksTo(1), () -> BallistixCreativeTabs.MAIN.get(), item -> ElectrodynamicsItems.ITEM_BATTERY.get());
+		super((ElectricItemProperties) new ElectricItemProperties().capacity(1666666.66667).receive(TransferPack.joulesVoltage(1666666.66667 / (120.0 * 20.0), 120)).extract(TransferPack.joulesVoltage(1666666.66667 / (120.0 * 20.0), 120)).stacksTo(1), () -> BallistixCreativeTabs.MAIN.get(), item -> VoltaicItems.ITEM_BATTERY.get());
 	}
 
 	@Override

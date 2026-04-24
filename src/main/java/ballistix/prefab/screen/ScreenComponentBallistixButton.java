@@ -7,7 +7,7 @@ import org.jetbrains.annotations.Nullable;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 import voltaic.api.screen.ITexture;
-import voltaic.prefab.screen.component.types.ScreenComponentGeneric;
+import voltaic.prefab.screen.component.ScreenComponentGeneric;
 import voltaic.prefab.utilities.RenderingUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
@@ -21,7 +21,7 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 
 /**
- * A modification of the vanilla button to integrate it with the Electrodynamics system of doing GUI components as the
+ * A modification of the vanilla button to integrate it with the Voltaic system of doing GUI components as the
  * Button class has several annoying issues
  * 
  * @author skip999

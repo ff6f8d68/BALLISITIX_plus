@@ -14,7 +14,7 @@ import ballistix.datagen.server.BallistixLootTablesProvider;
 import ballistix.datagen.server.recipe.BallistixRecipeProvider;
 import ballistix.datagen.server.tags.BallistixTagsProvider;
 import ballistix.registers.BallistixDamageTypes;
-import electrodynamics.datagen.client.ElectrodynamicsLangKeyProvider.Locale;
+import voltaic.datagen.client.VoltaicLangKeyProvider.Locale;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;

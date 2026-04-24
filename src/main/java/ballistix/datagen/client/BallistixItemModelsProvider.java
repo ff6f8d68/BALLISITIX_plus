@@ -6,12 +6,12 @@ import ballistix.common.item.ItemMinecart.SubtypeMinecart;
 import ballistix.registers.BallistixBlocks;
 import ballistix.registers.BallistixItems;
 import ballistix.registers.BallistixPlusBlocks;
-import electrodynamics.datagen.client.ElectrodynamicsItemModelsProvider;
+import voltaic.datagen.client.VoltaicItemModelsProvider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
-public class BallistixItemModelsProvider extends ElectrodynamicsItemModelsProvider {
+public class BallistixItemModelsProvider extends VoltaicItemModelsProvider {
 
 	public BallistixItemModelsProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
 		super(output, existingFileHelper, References.ID);

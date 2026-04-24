@@ -8,8 +8,8 @@ import com.google.common.collect.Sets;
 
 import ballistix.common.block.subtype.SubtypeBlast;
 import ballistix.common.settings.Constants;
-import electrodynamics.Electrodynamics;
-import electrodynamics.prefab.block.HashDistanceBlockPos;
+import voltaic.Voltaic;
+import voltaic.prefab.block.HashDistanceBlockPos;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.Level;
@@ -32,7 +32,7 @@ public class ThreadSimpleBlast extends ThreadBlast {
 	@SuppressWarnings("java:S2184")
 	public void run() {
 		int explosionRadius = this.explosionRadius;
-		Random random = Electrodynamics.RANDOM;
+		Random random = Voltaic.RANDOM;
 		runEuclidian(explosionRadius, random);
 		super.run();
 	}
@@ -54,7 +54,7 @@ public class ThreadSimpleBlast extends ThreadBlast {
 						}
 					}
 				}
-				Random rand = Electrodynamics.RANDOM;
+				Random rand = Voltaic.RANDOM;
 				for (int i = 0; i < positions.size(); i++) {
 					int newIndex = rand.nextInt(Math.max(0, i - 10), Math.min(positions.size() - 1, i + 10));
 					BlockPos atNew = positions.get(newIndex);
@@ -79,7 +79,7 @@ public class ThreadSimpleBlast extends ThreadBlast {
 					}
 				}
 			}
-			Random rand = Electrodynamics.RANDOM;
+			Random rand = Voltaic.RANDOM;
 			for (int i = 0; i < positions.size(); i++) {
 				int newIndex = rand.nextInt(Math.max(0, i - 10), Math.min(positions.size() - 1, i + 10));
 				BlockPos atNew = positions.get(newIndex);

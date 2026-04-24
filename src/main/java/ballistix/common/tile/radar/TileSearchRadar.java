@@ -15,7 +15,7 @@ import ballistix.registers.BallistixBlockTypes;
 import ballistix.registers.BallistixBlocks;
 import ballistix.registers.BallistixMissiles;
 import ballistix.registers.BallistixSounds;
-import electrodynamics.registers.ElectrodynamicsCapabilities;
+import voltaic.registers.VoltaicCapabilities;
 import net.minecraft.world.level.block.state.properties.Property;
 import voltaic.api.sound.SoundAPI;
 import voltaic.prefab.properties.types.PropertyTypes;
@@ -57,7 +57,7 @@ public class TileSearchRadar extends GenericTile {
         super(BallistixBlockTypes.TILE_RADAR.get(), pos, state);
         addComponent(new ComponentTickable(this).tickServer(this::tickServer).tickClient(this::tickClient));
         addComponent(new ComponentPacketHandler(this));
-        addComponent(new ComponentElectrodynamic(this, false, true).voltage(ElectrodynamicsCapabilities.DEFAULT_VOLTAGE).setInputDirections(Direction.DOWN).maxJoules(Constants.RADAR_USAGE * 20));
+        addComponent(new ComponentElectrodynamic(this, false, true).voltage(VoltaicCapabilities.DEFAULT_VOLTAGE).setInputDirections(Direction.DOWN).maxJoules(Constants.RADAR_USAGE * 20));
         addComponent(new ComponentContainerProvider("container.searchradar", this).createMenu((id, player) -> new ContainerSearchRadar(id, player, new SimpleContainer(0), getCoordsArray())));
     }
 

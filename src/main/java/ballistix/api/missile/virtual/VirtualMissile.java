@@ -10,7 +10,7 @@ import ballistix.common.settings.Constants;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
-import electrodynamics.common.tile.machines.quarry.TileQuarry;
+import voltaic.api.multiblock.subnodebased.TileMultiSubnode;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.UUIDUtil;
 import net.minecraft.resources.ResourceLocation;

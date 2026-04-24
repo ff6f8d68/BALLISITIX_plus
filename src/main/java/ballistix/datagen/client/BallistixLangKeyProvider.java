@@ -10,11 +10,11 @@ import ballistix.registers.BallistixItems;
 import ballistix.registers.BallistixPlusBlocks;
 import ballistix.bplus.items.BallistixPlusItems;
 import ballistix.registers.BallistixSounds;
-import electrodynamics.datagen.client.ElectrodynamicsLangKeyProvider;
+import voltaic.datagen.client.VoltaicLangKeyProvider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.Level;
 
-public class BallistixLangKeyProvider extends ElectrodynamicsLangKeyProvider {
+public class BallistixLangKeyProvider extends VoltaicLangKeyProvider {
 
 	public BallistixLangKeyProvider(PackOutput output, Locale locale) {
 		super(output, locale, References.ID);

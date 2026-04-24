@@ -2,11 +2,11 @@ package ballistix.bplus.block;
 
 import ballistix.bplus.tile.TileBigDartPod;
 import ballistix.registers.BallistixPlusBlocks;
-import electrodynamics.api.multiblock.Subnode;
-import electrodynamics.api.multiblock.parent.IMultiblockParentBlock;
-import electrodynamics.api.multiblock.parent.IMultiblockParentTile;
-import electrodynamics.prefab.block.GenericEntityBlock;
-import electrodynamics.prefab.block.GenericMachineBlock;
+import voltaic.api.multiblock.Subnode;
+import voltaic.api.multiblock.parent.IMultiblockParentBlock;
+import voltaic.api.multiblock.parent.IMultiblockParentTile;
+import voltaic.prefab.block.GenericEntityBlock;
+import voltaic.prefab.block.GenericMachineBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.entity.LivingEntity;

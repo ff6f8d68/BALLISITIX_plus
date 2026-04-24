@@ -5,7 +5,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import ballistix.common.block.subtype.SubtypeBlast;
 import ballistix.common.entity.EntityExplosive;
 import ballistix.registers.BallistixBlocks;
-import electrodynamics.prefab.utilities.math.MathUtils;
+import voltaic.prefab.utilities.math.MathUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRenderer;

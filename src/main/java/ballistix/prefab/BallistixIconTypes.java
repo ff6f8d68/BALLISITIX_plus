@@ -1,7 +1,7 @@
 package ballistix.prefab;
 
 import ballistix.References;
-import electrodynamics.api.screen.ITexture;
+import voltaic.api.screen.ITexture;
 import net.minecraft.resources.ResourceLocation;
 
 public enum BallistixIconTypes implements ITexture {

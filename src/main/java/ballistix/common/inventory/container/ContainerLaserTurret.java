@@ -2,7 +2,7 @@ package ballistix.common.inventory.container;
 
 import ballistix.common.tile.turret.antimissile.TileTurretLaser;
 import ballistix.registers.BallistixMenuTypes;
-import electrodynamics.prefab.inventory.container.GenericContainerBlockEntity;
+import voltaic.prefab.inventory.container.types.GenericContainerBlockEntity;
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
@@ -23,7 +23,7 @@ public class ContainerLaserTurret extends GenericContainerBlockEntity<TileTurret
 
     @Override
     public void addInventorySlots(Container container, Inventory inventory) {
-        playerInvOffset = 10;
+        int playerInvOffset = 10;
     }
 
     @Override

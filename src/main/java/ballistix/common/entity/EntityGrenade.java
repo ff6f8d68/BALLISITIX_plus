@@ -19,7 +19,7 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.projectile.ThrowableProjectile;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.neoforged.neoforge.network.NetworkHooks;
+import net.neoforged.neoforge.network.registration.PayloadRegistrar;
 
 public class EntityGrenade extends ThrowableProjectile implements IDefusable {
 	private static final EntityDataAccessor<Integer> FUSE = SynchedEntityData.defineId(EntityGrenade.class, EntityDataSerializers.INT);

@@ -67,7 +67,9 @@ neoForge {
 }
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
-
+tasks.withType(JavaCompile) {
+    options.compilerArgs << "-Xmaxerrs" << "1000" // Change 1000 to whatever you want
+}
 dependencies {
     // Local Electrodynamics and Voltalic JARs (must be 1.21.1 versions)
     implementation "voltaic:voltaic:1.21.1-1.0.2-0"

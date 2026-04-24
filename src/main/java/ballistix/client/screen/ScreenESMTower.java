@@ -12,11 +12,11 @@ import ballistix.prefab.screen.ScreenComponentCustomRender;
 import ballistix.prefab.screen.ScreenComponentVerticalSlider;
 import ballistix.prefab.screen.WrapperESMTowerDetections;
 import ballistix.prefab.utils.BallistixTextUtils;
-import electrodynamics.api.electricity.formatting.ChatFormatter;
-import electrodynamics.prefab.screen.GenericScreen;
-import electrodynamics.prefab.screen.component.types.guitab.ScreenComponentElectricInfo;
-import electrodynamics.prefab.screen.component.types.guitab.ScreenComponentGuiTab;
-import electrodynamics.prefab.screen.component.utils.AbstractScreenComponentInfo;
+import voltaic.api.electricity.formatting.ChatFormatter;
+import voltaic.prefab.screen.GenericScreen;
+import voltaic.prefab.screen.component.types.guitab.ScreenComponentElectricInfo;
+import voltaic.prefab.screen.component.types.guitab.ScreenComponentGuiTab;
+import voltaic.prefab.screen.component.utils.AbstractScreenComponentInfo;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.FormattedCharSequence;
@@ -78,7 +78,7 @@ public class ScreenESMTower extends GenericScreen<ContainerESMTower> {
         super.containerTick();
         wrapper.tick();
     }
-    
+    /*
     @Override
     public boolean mouseScrolled(double pMouseX, double pMouseY, double pDelta) {
     	if (wrapper != null) {
@@ -92,7 +92,7 @@ public class ScreenESMTower extends GenericScreen<ContainerESMTower> {
         }
     	return super.mouseScrolled(pMouseX, pMouseY, pDelta);
     }
-
+    */
     @Override
     public boolean mouseClicked(double mouseX, double mouseY, int button) {
         if (slider != null && slider.isVisible()) {

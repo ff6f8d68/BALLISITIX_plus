@@ -18,10 +18,10 @@ import ballistix.common.item.ItemRadarGun;
 import ballistix.common.item.ItemRocketLauncher;
 import ballistix.common.item.ItemScanner;
 import ballistix.common.item.ItemTracker;
-import electrodynamics.api.ISubtype;
-import electrodynamics.api.creativetab.CreativeTabSupplier;
-import electrodynamics.common.blockitem.types.BlockItemDescriptable;
-import electrodynamics.common.item.ItemElectrodynamics;
+import voltaic.api.ISubtype;
+import voltaic.api.creativetab.CreativeTabSupplier;
+import voltaic.common.blockitem.types.BlockItemDescriptable;
+import voltaic.common.item.ItemVoltaic;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.api.distmarker.Dist;
@@ -37,9 +37,9 @@ public class BallistixItems {
 
 	public static final HashMap<ISubtype, RegistryObject<Item>> SUBTYPEITEMREGISTER_MAPPINGS = new HashMap<>();
 
-	public static final RegistryObject<Item> ITEM_AAMISSILE = ITEMS.register("aamissile", () -> new ItemElectrodynamics(new Item.Properties().stacksTo(10), BallistixCreativeTabs.MAIN));
-	public static final RegistryObject<Item> ITEM_BULLET = ITEMS.register("bullet", () -> new ItemElectrodynamics(new Item.Properties().stacksTo(64), BallistixCreativeTabs.MAIN));
-	public static final RegistryObject<Item> ITEM_DUSTPOISON = ITEMS.register("dustpoison", () -> new ItemElectrodynamics(new Item.Properties(), () -> BallistixCreativeTabs.MAIN.get()));
+	public static final RegistryObject<Item> ITEM_AAMISSILE = ITEMS.register("aamissile", () -> new ItemVoltaic(new Item.Properties().stacksTo(10), BallistixCreativeTabs.MAIN));
+	public static final RegistryObject<Item> ITEM_BULLET = ITEMS.register("bullet", () -> new ItemVoltaic(new Item.Properties().stacksTo(64), BallistixCreativeTabs.MAIN));
+	public static final RegistryObject<Item> ITEM_DUSTPOISON = ITEMS.register("dustpoison", () -> new ItemVoltaic(new Item.Properties(), () -> BallistixCreativeTabs.MAIN.get()));
 	public static final RegistryObject<Item> ITEM_ROCKETLAUNCHER = ITEMS.register("rocketlauncher", ItemRocketLauncher::new);
 	public static final RegistryObject<Item> ITEM_RADARGUN = ITEMS.register("radargun", ItemRadarGun::new);
 	public static final RegistryObject<Item> ITEM_TRACKER = ITEMS.register("tracker", ItemTracker::new);

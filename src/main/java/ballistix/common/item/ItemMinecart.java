@@ -3,8 +3,8 @@ package ballistix.common.item;
 import ballistix.common.block.subtype.SubtypeBlast;
 import ballistix.common.entity.EntityMinecart;
 import ballistix.registers.BallistixCreativeTabs;
-import electrodynamics.api.ISubtype;
-import electrodynamics.common.item.ItemElectrodynamics;
+import voltaic.api.ISubtype;
+import voltaic.common.item.ItemVoltaic;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.BlockSource;
 import net.minecraft.core.Direction;
@@ -22,7 +22,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.RailShape;
 import net.minecraft.world.level.gameevent.GameEvent;
 
-public class ItemMinecart extends ItemElectrodynamics {
+public class ItemMinecart extends ItemVoltaic {
 
 	private SubtypeMinecart minecart;
 

@@ -1,7 +1,7 @@
 package ballistix.prefab.screen;
 
 import ballistix.References;
-import electrodynamics.api.screen.ITexture;
+import voltaic.api.screen.ITexture;
 import net.minecraft.resources.ResourceLocation;
 
 public enum RadarTextures implements ITexture {

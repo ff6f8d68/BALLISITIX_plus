@@ -8,7 +8,7 @@ import ballistix.common.blast.thread.ThreadSimpleBlast;
 import ballistix.common.block.subtype.SubtypeBlast;
 import ballistix.common.settings.Constants;
 import ballistix.registers.BallistixSounds;
-import electrodynamics.prefab.utilities.WorldUtils;
+import voltaic.prefab.utilities.WorldUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.protocol.game.ClientboundExplodePacket;
 import net.minecraft.server.level.ServerPlayer;

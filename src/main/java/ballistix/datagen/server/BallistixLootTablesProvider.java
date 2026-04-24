@@ -6,10 +6,10 @@ import ballistix.References;
 import ballistix.common.block.subtype.SubtypeBlast;
 import ballistix.registers.BallistixBlockTypes;
 import ballistix.registers.BallistixBlocks;
-import electrodynamics.datagen.server.ElectrodynamicsLootTablesProvider;
+import voltaic.datagen.server.VoltaicLootTablesProvider;
 import net.minecraft.world.level.block.Block;
 
-public class BallistixLootTablesProvider extends ElectrodynamicsLootTablesProvider {
+public class BallistixLootTablesProvider extends VoltaicLootTablesProvider {
 
 	public BallistixLootTablesProvider() {
 		super(References.ID);

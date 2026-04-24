@@ -27,7 +27,7 @@ import net.minecraft.world.level.Explosion.BlockInteraction;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
-import net.neoforged.neoforge.common.MinecraftForge;
+import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.ForgeEventFactory;
 
 public abstract class Blast {
@@ -57,7 +57,7 @@ public abstract class Blast {
 	@Deprecated(since = "Should not be called externally!", forRemoval = false)
 	public final void preExplode() {
 		PreBlastEvent evt = new PreBlastEvent(world, this);
-		MinecraftForge.EVENT_BUS.post(evt);
+		NeoForge.EVENT_BUS.post(evt);
 
 		if (!evt.isCanceled()) {
 			doPreExplode();
@@ -67,7 +67,7 @@ public abstract class Blast {
 	@Deprecated(since = "Should not be called externally!", forRemoval = false)
 	public final boolean explode(int callcount) {
 		BlastEvent evt = new BlastEvent(world, this);
-		MinecraftForge.EVENT_BUS.post(evt);
+		NeoForge.EVENT_BUS.post(evt);
 		if (!evt.isCanceled()) {
 			return doExplode(callcount);
 		}
@@ -77,7 +77,7 @@ public abstract class Blast {
 	@Deprecated(since = "Should not be called externally!", forRemoval = false)
 	public final void postExplode() {
 		PostBlastEvent evt = new PostBlastEvent(world, this);
-		MinecraftForge.EVENT_BUS.post(evt);
+		NeoForge.EVENT_BUS.post(evt);
 
 		if (!evt.isCanceled()) {
 			doPostExplode();
@@ -86,7 +86,7 @@ public abstract class Blast {
 
 	public EntityBlast performExplosion() {
 		ConstructBlastEvent evt = new ConstructBlastEvent(world, this);
-		MinecraftForge.EVENT_BUS.post(evt);
+		NeoForge.EVENT_BUS.post(evt);
 		if(position != null) {
 			Explosion explosion = new Explosion(world, null, null, null, position.getX(), position.getY(), position.getZ(), 3, true, BlockInteraction.DESTROY);
 			if (!ForgeEventFactory.onExplosionStart(world, explosion) && !evt.isCanceled()) {

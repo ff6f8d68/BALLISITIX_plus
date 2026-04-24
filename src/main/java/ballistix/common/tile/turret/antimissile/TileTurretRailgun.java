@@ -13,15 +13,15 @@ import ballistix.common.inventory.container.ContainerRailgunTurret;
 import ballistix.common.settings.Constants;
 import ballistix.common.tile.turret.antimissile.util.TileTurretAntimissileProjectile;
 import ballistix.registers.BallistixBlockTypes;
-import electrodynamics.common.item.ItemUpgrade;
-import electrodynamics.common.tags.ElectrodynamicsTags;
-import electrodynamics.prefab.properties.Property;
-import electrodynamics.prefab.properties.PropertyType;
-import electrodynamics.prefab.tile.components.IComponentType;
-import electrodynamics.prefab.tile.components.type.ComponentContainerProvider;
-import electrodynamics.prefab.tile.components.type.ComponentInventory;
-import electrodynamics.prefab.tile.components.type.ComponentTickable;
-import electrodynamics.registers.ElectrodynamicsSounds;
+import voltaic.common.item.ItemUpgrade;
+import voltaic.common.tags.VoltaicTags;
+import voltaic.prefab.properties.Property;
+import voltaic.prefab.properties.PropertyType;
+import voltaic.prefab.tile.components.IComponentType;
+import voltaic.prefab.tile.components.type.ComponentContainerProvider;
+import voltaic.prefab.tile.components.type.ComponentInventory;
+import voltaic.prefab.tile.components.type.ComponentTickable;
+import voltaic.registers.VoltaicSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundSource;
@@ -50,7 +50,7 @@ public class TileTurretRailgun extends TileTurretAntimissileProjectile {
         return new ComponentInventory(this, ComponentInventory.InventoryBuilder.newInv().inputs(1).upgrades(3)).setDirectionsBySlot(0, Direction.values()).valid((index, stack, inv) -> {
 
             if (index == 0) {
-                return stack.is(ElectrodynamicsTags.Items.ROD_STEEL);
+                return stack.is(VoltaicTags.Items.ROD_STEEL);
             } else if (index >= inv.getUpgradeSlotStartIndex()) {
                 return stack.getItem() instanceof ItemUpgrade upgrade && inv.isUpgradeValid(upgrade.subtype);
             } else {
@@ -100,7 +100,7 @@ public class TileTurretRailgun extends TileTurretAntimissileProjectile {
 
         inv.removeItem(0, 1);
 
-        level.playSound(null, getBlockPos(), ElectrodynamicsSounds.SOUND_RAILGUNKINETIC.get(), SoundSource.BLOCKS, 2.0F, 1.0F);
+        level.playSound(null, getBlockPos(), VoltaicSounds.SOUND_RAILGUNKINETIC.get(), SoundSource.BLOCKS, 2.0F, 1.0F);
 
         cooldown.set(Constants.RAILGUN_TURRET_COOLDOWN);
 
