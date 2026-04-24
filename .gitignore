@@ -37,8 +37,7 @@ asm/
 \.ReAuth\.cfg
 shaderpacks/
 Working Directory/
-lib/
-libs/
+
 outputSplitOnly/
 
 releaseJarsOnly/
